@@ -6,30 +6,30 @@ import org.springframework.stereotype.Service;
 public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String hello() {
-        return "Добро пожаловать в калькулятор";
+        return null;
     }
 
     @Override
-    public String plus(int num1, int num2) {
+    public int plus(int num1, int num2) {
         int sum = num1 + num2;
-        return num1 + " + " + num2 + " = " + sum;
+        return sum;
     }
 
     @Override
-    public String minus(int num1, int num2) {
+    public int minus(int num1, int num2) {
         int result = num1 - num2;
-        return num1 + " - " + num2 + " = " + result;
+        return result;
     }
 
     @Override
-    public String multiply(int num1, int num2) {
+    public int multiply(int num1, int num2) {
         int result = num1 * num2;
-        return num1 + " * " + num2 + " = " + result;
+        return result;
     }
 
     @Override
-    public String divide(int num1, int num2) {
+    public double divide(int num1, int num2) {
         double result = (double) num1 / num2;
-        return num1 + " / " + num2 + " = " + result;
+        return result;
     }
 }
