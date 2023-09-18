@@ -3,11 +3,11 @@ package com.example.calculatorapp.service;
 public interface CalculatorService {
     String hello();
 
-    int plus(int num1, int num2);
+    long plus(int num1, int num2);
 
-    int minus(int num1, int num2);
+    long minus(int num1, int num2);
 
-    int multiply(int num1, int num2);
+    long multiply(int num1, int num2);
 
     double divide(int num1, int num2);
 }
