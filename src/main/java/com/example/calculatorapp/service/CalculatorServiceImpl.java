@@ -1,35 +1,37 @@
 package com.example.calculatorapp.service;
 
+import com.example.calculatorapp.exeption.DivideException;
 import org.springframework.stereotype.Service;
+
+import java.util.zip.DataFormatException;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String hello() {
-        return "Добро пожаловать в калькулятор";
+        return null;
     }
 
     @Override
-    public String plus(int num1, int num2) {
-        int sum = num1 + num2;
-        return num1 + " + " + num2 + " = " + sum;
+    public long plus(int num1, int num2) {
+        return (long) num1 + num2;
     }
 
     @Override
-    public String minus(int num1, int num2) {
-        int result = num1 - num2;
-        return num1 + " - " + num2 + " = " + result;
+    public long minus(int num1, int num2) {
+        return (long) num1 - num2;
     }
 
     @Override
-    public String multiply(int num1, int num2) {
-        int result = num1 * num2;
-        return num1 + " * " + num2 + " = " + result;
+    public long multiply(int num1, int num2) {
+        return (long) num1 * num2;
     }
 
     @Override
-    public String divide(int num1, int num2) {
-        double result = (double) num1 / num2;
-        return num1 + " / " + num2 + " = " + result;
+    public double divide(int num1, int num2) {
+        if (num2 == 0) {
+            throw new DivideException("Нельзя делить на 0");
+        }
+        return (double) num1 / num2;
     }
 }
